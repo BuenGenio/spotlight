@@ -30,6 +30,9 @@ jobs:
             node --check "$f" || { echo "SYNTAX ERROR in $f"; exit 1; }
           done
 
+      - name: Search grammar and layout tests
+        run: node --test tests/query.test.mjs
+
       - name: Schema compiles
         run: glib-compile-schemas --strict schemas/
 

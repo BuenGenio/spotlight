@@ -13,7 +13,7 @@
 /* Container, single unified window, dark default. */
 .spotlight-container {
   background-color: rgba(28, 28, 30, 0.85);
-  border-radius: 36px;
+  border-radius: 24px;
   padding: 10px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   color: #f5f5f7;
@@ -129,3 +129,73 @@
 .spotlight-container.theme-light .search-provider-icon {
   color: #6e6e73;
 }
+
+/* Radius classes keep appearance changes in the theme stylesheet. */
+.spotlight-container.spotlight-radius-0 { border-radius: 0px; }
+.spotlight-container.spotlight-radius-1 { border-radius: 1px; }
+.spotlight-container.spotlight-radius-2 { border-radius: 2px; }
+.spotlight-container.spotlight-radius-3 { border-radius: 3px; }
+.spotlight-container.spotlight-radius-4 { border-radius: 4px; }
+.spotlight-container.spotlight-radius-5 { border-radius: 5px; }
+.spotlight-container.spotlight-radius-6 { border-radius: 6px; }
+.spotlight-container.spotlight-radius-7 { border-radius: 7px; }
+.spotlight-container.spotlight-radius-8 { border-radius: 8px; }
+.spotlight-container.spotlight-radius-9 { border-radius: 9px; }
+.spotlight-container.spotlight-radius-10 { border-radius: 10px; }
+.spotlight-container.spotlight-radius-11 { border-radius: 11px; }
+.spotlight-container.spotlight-radius-12 { border-radius: 12px; }
+.spotlight-container.spotlight-radius-13 { border-radius: 13px; }
+.spotlight-container.spotlight-radius-14 { border-radius: 14px; }
+.spotlight-container.spotlight-radius-15 { border-radius: 15px; }
+.spotlight-container.spotlight-radius-16 { border-radius: 16px; }
+.spotlight-container.spotlight-radius-17 { border-radius: 17px; }
+.spotlight-container.spotlight-radius-18 { border-radius: 18px; }
+.spotlight-container.spotlight-radius-19 { border-radius: 19px; }
+.spotlight-container.spotlight-radius-20 { border-radius: 20px; }
+.spotlight-container.spotlight-radius-21 { border-radius: 21px; }
+.spotlight-container.spotlight-radius-22 { border-radius: 22px; }
+.spotlight-container.spotlight-radius-23 { border-radius: 23px; }
+.spotlight-container.spotlight-radius-24 { border-radius: 24px; }
+.spotlight-container.spotlight-radius-25 { border-radius: 25px; }
+.spotlight-container.spotlight-radius-26 { border-radius: 26px; }
+.spotlight-container.spotlight-radius-27 { border-radius: 27px; }
+.spotlight-container.spotlight-radius-28 { border-radius: 28px; }
+.spotlight-container.spotlight-radius-29 { border-radius: 29px; }
+.spotlight-container.spotlight-radius-30 { border-radius: 30px; }
+.spotlight-container.spotlight-radius-31 { border-radius: 31px; }
+.spotlight-container.spotlight-radius-32 { border-radius: 32px; }
+.spotlight-container.spotlight-radius-33 { border-radius: 33px; }
+.spotlight-container.spotlight-radius-34 { border-radius: 34px; }
+.spotlight-container.spotlight-radius-35 { border-radius: 35px; }
+.spotlight-container.spotlight-radius-36 { border-radius: 36px; }
+.spotlight-container.spotlight-radius-37 { border-radius: 37px; }
+.spotlight-container.spotlight-radius-38 { border-radius: 38px; }
+.spotlight-container.spotlight-radius-39 { border-radius: 39px; }
+.spotlight-container.spotlight-radius-40 { border-radius: 40px; }
+.spotlight-container.spotlight-radius-41 { border-radius: 41px; }
+.spotlight-container.spotlight-radius-42 { border-radius: 42px; }
+.spotlight-container.spotlight-radius-43 { border-radius: 43px; }
+.spotlight-container.spotlight-radius-44 { border-radius: 44px; }
+.spotlight-container.spotlight-radius-45 { border-radius: 45px; }
+.spotlight-container.spotlight-radius-46 { border-radius: 46px; }
+.spotlight-container.spotlight-radius-47 { border-radius: 47px; }
+.spotlight-container.spotlight-radius-48 { border-radius: 48px; }
+
+.spotlight-search-tools { spacing: 8px; padding: 4px 12px 8px; }
+.spotlight-search-header { spacing: 12px; }
+.spotlight-search-description, .spotlight-index-note { color: #b4b4bb; font-size: 12px; }
+.spotlight-search-help { spacing: 4px; padding: 8px 0; }
+.spotlight-help-button { padding: 4px 8px; border-radius: 8px; font-size: 12px; }
+.spotlight-help-example { padding: 6px 8px; border-radius: 8px; text-align: left; font-size: 13px; }
+.spotlight-help-button:hover, .spotlight-help-button:focus,
+.spotlight-help-example:hover, .spotlight-help-example:focus { background-color: rgba(128, 128, 128, 0.2); }
+.spotlight-index-results { max-height: 340px; }
+.spotlight-file-result { padding: 9px 10px; border-radius: 10px; }
+.spotlight-file-result:hover, .spotlight-file-result:focus,
+.spotlight-file-result:selected { background-color: rgba(128, 128, 128, 0.2); }
+.spotlight-file-row { spacing: 12px; }
+.spotlight-file-name { font-size: 15px; }
+.spotlight-file-path { color: #b4b4bb; font-size: 12px; }
+.spotlight-container.theme-light .spotlight-search-description,
+.spotlight-container.theme-light .spotlight-index-note,
+.spotlight-container.theme-light .spotlight-file-path { color: #66666e; }

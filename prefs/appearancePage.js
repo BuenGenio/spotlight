@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
+import Gio from 'gi://Gio';
 
 // Theme options. Default follows the system style, dark and light force a specific appearance.
 const THEMES = [
@@ -37,6 +38,23 @@ export function buildAppearancePage(settings) {
     });
 
     group.add(themeRow);
+    const widthRow = new Adw.SpinRow({
+        title: 'Dialog width',
+        subtitle: 'Pixels; capped at 85% of the monitor width',
+        adjustment: new Gtk.Adjustment({lower: 400, upper: 2400, step_increment: 20, page_increment: 100}),
+        digits: 0,
+    });
+    settings.bind('popup-width', widthRow, 'value', Gio.SettingsBindFlags.DEFAULT);
+    group.add(widthRow);
+
+    const radiusRow = new Adw.SpinRow({
+        title: 'Corner radius',
+        subtitle: 'Pixels; 0 gives square corners',
+        adjustment: new Gtk.Adjustment({lower: 0, upper: 48, step_increment: 1, page_increment: 8}),
+        digits: 0,
+    });
+    settings.bind('corner-radius', radiusRow, 'value', Gio.SettingsBindFlags.DEFAULT);
+    group.add(radiusRow);
     return group;
 }
 

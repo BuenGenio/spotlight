@@ -13,5 +13,17 @@
       <summary>Theme preference</summary>
       <description>Color theme for Spotlight. Values: default (follows system), dark, light.</description>
     </key>
+    <key name="popup-width" type="i">
+      <range min="400" max="2400"/>
+      <default>900</default>
+      <summary>Dialog width</summary>
+      <description>Preferred width in pixels, capped at 85 percent of the active monitor width.</description>
+    </key>
+    <key name="corner-radius" type="i">
+      <range min="0" max="48"/>
+      <default>24</default>
+      <summary>Corner radius</summary>
+      <description>Dialog corner radius in pixels. Zero gives square corners.</description>
+    </key>
   </schema>
 </schemalist>

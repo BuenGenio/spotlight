@@ -5,19 +5,23 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/itsnin/spotlight">Repository</a>
+  <a href="https://github.com/BuenGenio/spotlight">Repository</a>
   •
   <a href="https://extensions.gnome.org/extension/10666/spotlight/">GNOME Extensions</a>
 </p>
 
 <p align="center">
-  <strong>Version:</strong> 2026.15
+  <strong>Version:</strong> 2026.16
   &nbsp;•&nbsp;
   <strong>Shortcut:</strong> <code>Ctrl + Space</code>
 </p>
 
 <img width="1366" height="768" alt="Screenshot" src="https://github.com/user-attachments/assets/7d3d6cfb-86eb-44a7-83a0-f9810ded63f8" />
 
+
+## Fork installation
+
+This fork adds appearance controls and scoped, explained file searches. Clone this repository and run `./scripts/install-local.sh` to install these changes. The GNOME Extensions listing and release installer below install the upstream version.
 
 ## Installation
 
@@ -39,6 +43,8 @@ gnome-extensions prefs spotlight@nin
 
 - Toggle keyboard shortcut (default `Ctrl+Space`)
 - Visual theme: Default (follows system), Dark, or Light
+- Dialog width: 400–2400 pixels (default 900), capped at 85% of the monitor width
+- Corner radius: 0–48 pixels (default 24); changes apply while the popup is open
 
 
 ## Features
@@ -61,6 +67,28 @@ gnome-extensions prefs spotlight@nin
 | Search the web | Type query, `Enter` |
 | Traverse results | `↑` / `↓` |
 | Dismiss | `Esc`, `Ctrl + Space`, or click outside |
+
+## Search filters
+
+Plain text keeps the normal GNOME search providers. Use **Search tips** below the entry, or press **F1**, for clickable examples and a plain-language explanation of your active filter.
+
+| Query | Search |
+|---|---|
+| `files:invoice` | File names containing “invoice”, excluding folders |
+| `folders:photos` | Folder names containing “photos” |
+| `content:"annual report"` | Extracted file text containing this phrase |
+| `type:pdf invoice` | PDF file names containing “invoice” |
+| `type:image` | Images identified by their MIME type |
+| `type:image/png` | A specific MIME type |
+| `files:report type:pdf,docx` | File names with either extension |
+
+`file:`, `folder:`, and `contents:` are aliases; `ext:` works like `type:`. Choose one scope per query, optionally with a type filter. Multiple words are treated as one phrase. Use ↑/↓ and Enter to open a scoped result.
+
+Scoped queries use the [LocalSearch ontology](https://gnome.pages.gitlab.gnome.org/localsearch/endpoint.html) through the `tinysparql` command and its local D-Bus endpoint. They need LocalSearch and TinySPARQL installed. Only indexed files are searched; contents also need a successful text extraction. No filesystem crawl is started and scoped queries are not sent to the other search providers.
+
+Run `./scripts/install-local.sh` to build and install this checkout, saving a backup of any existing installation. The fork retains the upstream UUID, so it replaces the original extension. On Wayland, log out and back in to load changed JavaScript and settings schemas.
+
+For focused checks, run `node --test tests/query.test.mjs`, `glib-compile-schemas --strict schemas/`, and `GSETTINGS_BACKEND=memory gjs -m prefs/tests/preferences.js`. `gjs -m tests/indexedSearch.js` checks queries and cancellation against an available local index. `python3 tests/headless-smoke.py` checks popup routing and lifecycle in a separate headless GNOME session, with memory-backed settings.
 
 ## Architecture
 
